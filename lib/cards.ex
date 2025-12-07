@@ -22,4 +22,18 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  def save(deck, filename) do
+    bianary = :erlang.term_to_binary(deck)
+    File.write(filename, bianary)
+  end
+
+  def load(filename) do
+    {status, bianry} = File.read(filname)
+
+    case status do
+      :ok -> :erlang.bianary_to_term bianary
+      :error -> "File does not exisit"
+    end
+  end
+
 end
