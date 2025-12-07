@@ -1,7 +1,12 @@
 defmodule Cards do
+  @moduledoc """
+    Provides m ethods for creating and handling a deck of cards
+  """
 
+@doc """
+returns a list of strings representing a list of playing cards
+"""
   def create_deck do
-
     values = ["Ace", "Two", "There", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"]
     suits = ["Spades", "Diamonds", "Hearts", "Clubs"]
 
@@ -10,6 +15,9 @@ defmodule Cards do
     end
   end
 
+  @doc """
+  Divides a deck into a hand and the remainder of the deck
+  """
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
